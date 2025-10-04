@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* AICK Studio inspired dark theme colors */
+  --background: #0f172a; /* slate-900 */
+  --foreground: #f8fafc; /* slate-50 */
+  --card: #1e293b; /* slate-800 */
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #6f4889; /* AICK Studio purple */
+  --primary-foreground: #f8fafc;
+  --secondary: #334155; /* slate-700 */
+  --secondary-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8; /* slate-400 */
+  --accent: #f08b55; /* AICK Studio orange */
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444; /* red-500 */
+  --border: #334155;
+  --input: #1e293b;
+  --ring: #6f4889;
+  --chart-1: #f08b55; /* orange */
+  --chart-2: #6f4889; /* purple */
+  --chart-3: #1844a3; /* blue */
+  --chart-4: #587834; /* green */
+  --chart-5: #a0451a; /* deep orange */
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #6f4889;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #334155;
+  --sidebar-ring: #6f4889;
+}
+
+/* Custom gradient backgrounds inspired by AICK Studio */
+.gradient-hero {
+  background: linear-gradient(135deg, #f08b55 0%, #a0451a 50%, #6f4889 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, rgba(240, 139, 85, 0.1) 0%, rgba(111, 72, 137, 0.1) 100%);
+}
+
+/* Platform-specific colors */
+.platform-x {
+  @apply bg-slate-700 text-white;
+}
+
+.platform-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  @apply text-white;
+}
+
+.platform-linkedin {
+  @apply bg-blue-600 text-white;
+}
+
+.platform-tiktok {
+  @apply bg-black text-white;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-purple-600 hover:bg-purple-700 text-white;
+}
+
+.btn-accent {
+  @apply bg-orange-500 hover:bg-orange-600 text-white;
+}
+
+.btn-secondary {
+  @apply bg-slate-700 hover:bg-slate-600 text-white;
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Sidebar active state */
+.sidebar-active {
+  @apply bg-purple-600 text-white;
+}
+
+/* Form inputs dark theme */
+.form-input {
+  @apply bg-slate-800 border-slate-600 text-white placeholder-slate-400;
+}
+
+.form-textarea {
+  @apply bg-slate-800 border-slate-600 text-white placeholder-slate-400 resize-none;
+}
+
+/* Tab styles */
+.tab-active {
+  @apply bg-purple-600 text-white;
+}
+
+.tab-inactive {
+  @apply bg-transparent text-slate-400 hover:text-white;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
